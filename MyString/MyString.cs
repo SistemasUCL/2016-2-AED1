@@ -26,6 +26,38 @@ namespace MyString
             minha_string = s;
         }
 
+        public bool Letra() {
+            string letras = "abcdefghijklmnopqrstuvxwyz";
+            letras += letras.ToUpper();
+
+            for(int p=0; p<minha_string.Length; p++) {
+                bool e_letra = false;
+                for(int l=0; l<letras.Length; l++) {
+                    if(minha_string[p] == letras[l]) {
+                        e_letra = true;
+                    }
+                }
+                if(e_letra == false) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool Letra2() {
+            string letras = "abcdefghijklmnopqrstuvxwyz";
+            letras += letras.ToUpper();
+
+            for (int p = 0; p < minha_string.Length; p++) {
+                if(letras.IndexOf(minha_string[p]) < 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+
         public bool Digito() {
             for(int p=0; p<minha_string.Length; p++) {
                 char c = minha_string[p];
